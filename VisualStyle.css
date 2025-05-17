@@ -1,0 +1,362 @@
+body 
+{
+  background: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.iphone13mini-frame 
+{
+  width: 375px;
+  height: 812px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  padding: 16px;
+}
+
+header h2 
+{
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+.date 
+{
+  text-align: center;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.calendar-grid 
+{
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 16px;
+}
+
+.day 
+{
+  text-align: center;
+  font-size: 12px;
+}
+
+.date-num 
+{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.active .date-num 
+{
+  background: #3a6ee8;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+}
+
+.updates 
+{
+  margin-top: 20px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.updates h3 
+{
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.calendar-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header .month-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+
+.update-card 
+{
+  background: #f0f4ff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+/* Green assignment card styling */
+.update-card.green {
+  background: #e0f7e9;
+  border-left: 5px solid #2ecc71;
+}
+
+/* Purple assignment card styling */
+.update-card.purple {
+  background: #f1e4ff;
+  border-left: 5px solid #9b59b6;
+}
+
+/* makes sure the entire card stays clickable and styled */
+.update-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.update-card.orange 
+{
+  background: #ffe4b3;
+  border-left: 5px solid #f5a623;
+}
+
+/* Adds space between the header and assignment cards */
+.assignments 
+{
+  margin-top: 16px;
+}
+
+/* Adds space between each assignment card */
+.assignments .update-card 
+{
+  margin-bottom: 16px;
+}
+
+
+.label 
+{
+  color: #3a6ee8;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.text 
+{
+  font-size: 12px;
+  color: #444;
+}
+
+.nav-bar 
+{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 0;
+  border-top: 1px solid #ccc;
+  background: white;
+}
+
+.nav-bar i 
+{
+  font-size: 20px;
+  color: #444;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px 0;
+  width: 14.28%;
+}
+
+.calendar-table th {
+  background-color: #e7ecff;
+  font-weight: bold;
+}
+
+.calendar-table td {
+  background-color: #f6f9ff;
+}
+
+/* Assignment status stickers */
+.status-tag {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  color: white;
+  z-index: 1;
+}
+
+/* Add positioning to update cards for status tag */
+.update-card {
+  position: relative;
+}
+
+/* Specific colors */
+.status-tag.overdue {
+  background-color: #e74c3c;
+}
+
+.status-tag.ongoing {
+  background-color: #f39c12;
+}
+
+.status-tag.done {
+  background-color: #2ecc71;
+}
+
+.supervisor-comments {
+  padding: 1rem;
+}
+
+.comment-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.time {
+  color: gray;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+.chat-thread {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.student-reply {
+  align-self: flex-end;
+  background-color: #f0f8ff;
+}
+
+.message-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.message-row .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.message-text {
+  background: #f8f8f8;
+  padding: 10px 12px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.message-text .timestamp {
+  font-size: 0.75rem;
+  color: #888;
+  margin-left: 6px;
+}
+
+.message-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.message-row.you {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.message-row.you .avatar {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+.message-text {
+  background-color: #f3f3f3;
+  padding: 0.75rem;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: gray;
+}
+
+.message-input-bar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.message-input-bar input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  margin-right: 0.5rem;
+}
+
+.message-input-bar button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
