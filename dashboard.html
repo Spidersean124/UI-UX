@@ -10,6 +10,14 @@
 
   <!-- Defining the bootstrap icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    .updates {
+      max-height: 170px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
   <div class="iphone13mini-frame ">
@@ -33,7 +41,6 @@
     </table>
   </section>
 
-
     <!---------------------->
     <!-- Updates Section -->
     <!---------------------->
@@ -51,6 +58,23 @@
         <p class="label">Advanced Programming</p>
         <p class="text">Logic Error in line 167</p>
       </div>
+    </section>
+
+    <!--------------------------------->
+    <!-- Meeting Scheduler Prototype -->
+    <!--------------------------------->
+    <section class="update-card" style="margin: 1rem;">
+      <p class="label">Schedule a Meeting</p>
+      <label for="meetingTime">Choose Time:</label>
+      <input type="time" id="meetingTime" />
+      <br /><br />
+      <label for="meetingNotes">Notes (optional):</label>
+      <textarea id="meetingNotes" placeholder="Any notes or requests?" style="width: 100%; resize: none;"></textarea>
+      <br /><br />
+      <button onclick="confirmMeeting()" style="background-color: #007bff; color: white; border: none; padding: 10px; border-radius: 6px; width: 100%;">
+        Confirm Meeting
+      </button>
+      <p id="confirmationMessage" style="margin-top: 10px; color: green;"></p>
     </section>
 
     <!-- Navigation bar -->
@@ -143,6 +167,19 @@
     renderCalendar();
   }
 
+  // Meeting scheduler confirmation
+  function confirmMeeting() {
+    const time = document.getElementById("meetingTime").value;
+    const message = document.getElementById("confirmationMessage");
+
+    if (time) {
+      message.style.color = "green";
+      message.textContent = `Meeting confirmed for ${time}.`;
+    } else {
+      message.style.color = "red";
+      message.textContent = "Please choose a time first.";
+    }
+  }
+
   renderCalendar(); // run this straight away when page loads
 </script>
-
